@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netflix Clone</title>
+    <link rel="stylesheet" href="style.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <!-- header start -->
+    <header id="header" class="black-bg">
+      <div class="header-container container">
+        <div class="left-cont">
+          <img class="header-brand" src="netflix-logo.png" alt="Netflix Logo" />
+          <ul class="main-nav">
+            <li class="nav-item active">Home</li>
+            <li class="nav-item">Tv Shows</li>
+            <li class="nav-item">Movies</li>
+            <li class="nav-item">News & Popular</li>
+            <li class="nav-item">My List</li>
+            <li class="nav-item">Browse by Languages</li>
+          </ul>
+        </div>
+        <div class="right-cont">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="search-icon"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M13 11C13 13.7614 10.7614 16 8 16C5.23858 16 3 13.7614 3 11C3 8.23858 5.23858 6 8 6C10.7614 6 13 8.23858 13 11ZM14.0425 16.2431C12.5758 17.932 10.4126 19 8 19C3.58172 19 0 15.4183 0 11C0 6.58172 3.58172 3 8 3C12.4183 3 16 6.58172 16 11C16 11.9287 15.8417 12.8205 15.5507 13.6497L24.2533 18.7028L22.7468 21.2972L14.0425 16.2431Z"
+              fill="currentColor"
+            ></path>
+          </svg>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="Hawkins-Icon Hawkins-Icon-Standard"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M13 4.57092C16.3922 5.05624 18.9998 7.9736 18.9998 11.5V15.2538C20.0486 15.3307 21.0848 15.4245 22.107 15.5347L21.8926 17.5232C18.7219 17.1813 15.409 17 11.9998 17C8.59056 17 5.27764 17.1813 2.10699 17.5232L1.89258 15.5347C2.91473 15.4245 3.95095 15.3307 4.99978 15.2538V11.5C4.99978 7.97345 7.6076 5.05599 11 4.57086V2H13V4.57092ZM8.62568 19.3712C8.6621 20.5173 10.1509 22 11.9993 22C13.8477 22 15.3365 20.5173 15.373 19.3712C15.38 19.1489 15.1756 19 14.9531 19H9.04555C8.82308 19 8.61862 19.1489 8.62568 19.3712Z"
+              fill="currentColor"
+            ></path>
+          </svg>
+          <img
+            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAjVBMVEUNfoD///8Ae30AeHoAdXcAdnl6q6z2+/vo8vLx+Ph1sbIAdHfu9PQHfH8AgYPl8vI7kJKRvr+hx8jO4+PJ3d4eioxppqja6eni7OxdoqRSnqC42dqXxsaw09Ntra8ph4l/uLmGtrdapqeozc02lZdMmZuuzM3A2NnU4+SRvL2fy8xSmZpEkZO+1NV1qaqNxlfBAAAEIElEQVR4nO3bXXeiOhQGYNgJg6AiiIiggtbP0U7//8+beJzjoCYtSAQ7630uetVmvZuEEOnWMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAvjNi3Ii8rkWtpuiLGCyKxA/dOchIZ3FPmGc5tVckGf4iPMUIA9/QGYNoEZr/c4Y+0zh2FSydX2KY00RfDDJ2ZlEnbadEa+EUYziBrlkkPzav2W4rJc5vYphzTQPTbYGixBZmkc/uYphDPTG29yObHb/p7YYSSQxzqSEGJbZs6FX9kavJQ1mMQV6/RDaVjWzaDU8i/ZDGMBf116knH1nH0FUoLrQ5qR2D3hQVhl0dwUvjihh2VHctsZVqaC3By6K1IoaZ1a2Qj5QXr68leznKpWQu6y5Tfv8wbKXC7HkV7hQjN1xh+rQKmeQkca6w0acFRaoKa9+HyosXci3Ry7Kk5w4de6lhKCps+nl4d+w+q/88VD0uHA3HpSpoLJ/ErH6FdHRkIw+b3GdOPOljK841DE2yvWaiYflXjLGWTKLtaolB9w8Me938uxq+uC8x0LMZUHRboqNh9T+QY3lb4ErXrUL92dXli6N23tPwt04xRsfV+MCi5O+Hl8Gy4W20EMMvXOrhRut1Jsrd+WQy2c82Wt9TVo7hpatY5FhlhvbXtsQsLmh/11w9x0vEAAAAAAAAAAAAAAAAgH8KMc/4l/8HRXyz3e2GLf07uqD/nO+fkLHZ2eeWgnZnkVi0ifSvJOLJpUXKTtoskfxdp9fZb7TWSETprtA50XCD3RWW/Qky19dUQCx3b7r2PV1jV+dd+sU6M88iDc0v1I2Cu5bextuzLqyrdrGgdhOHmL6xrGM/0hP3EfurIM42YY/fkMRYOpR2ZDvt3Yfe/iaLPVn4j7TBiL0l9xexooe24UbXIkvWL7n7uSGryh1JjEfjofQrQefV/7T8X2OuNFIvnq3FmisxlyR+zYoWo4Fi9oRB1kAhapbyytvT4OM9OpUpr1PUZhnR8SOYqosT4sxq99AmHvifxBuEo2G2iXiXc1bEeddYp8vtaN/55K9P9bntH0qJZV+kFHrh9HAI3P8sDodVqL7nCuzwrc0Wwr9YFEjbxGuy5+MWv1F+jcgPPr2XHtAL3l9j/v4Qny+CUguvHGfnvt7n3r44LSu+IFnVIDgarW8vUsSjmepQUnr24iB65dZZYt54NXi8vtEw9V64vDOx/fmHuPre6vSmWa6/r/s5xDls7W7D8lU64fZn6vFvUt4ZMcrfk2D69VnAmQbj95xefm3KiHMn73prN/g1CuO441zm1HacQRyHo19Btva6vMz5/JWd6jQ83z8mx48fZ8kx2fi5R9++tiKiPl1rOxEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALy43/ipMgzSotaqAAAAAElFTkSuQmCC"
+            alt=""
+          />
+        </div>
+      </div>
+    </header>
+    <!-- header end -->
+    <!-- banner section start -->
+    <div class="banner-section" id="banner-section">
+      <div class="banner_fadeBottom"></div>
+    </div>
+    <!-- banner section end -->
+
+    <!-- movies section -->
+
+    <div class="movies-cont container" id="movies-cont">
+      <!-- <div class="movies-section"> -->
+      <!-- <h2 class="movie-section-heading">Trending Now <span class="explore-nudge">Explore All</span></h2>
+            <div class="movies-row">
+                <img  class="movie-item" src="https://tse4.mm.bing.net/th?id=OIP.yPg5GPOCU6p4CAtzXuumkwHaDV&pid=Api&P=0" alt="">
+                <img class="movie-item" src="https://tse4.mm.bing.net/th?id=OIP.E0cXwnTx_rZp-T3RlwH7SwHaEK&pid=Api&P=0" alt="">
+                <img class="movie-item" src="https://tse4.mm.bing.net/th?id=OIP.E0cXwnTx_rZp-T3RlwH7SwHaEK&pid=Api&P=0" alt="">
+                
+                <img class="movie-item" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBIQEhISEhIPEhIYEg8PDxgPDxESEhAPGBQcGSUhGBwhJS8mHCw4HxkYNDsmKzE0ODc3KCU8QDs0Py40NTMBDAwMEA8QHhISHjQkJCQxNTQ0MTQ0MTQ0NDQxMTE0NDQ0NDQ0NDQ0MTQxNDQ0MTQxNDQ0MTExNDY0NDQ0NDQ0NP/AABEIAKgBKwMBIgACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAAAAQIDBAUGB//EAEMQAAIBAwIDBgQDBQYCCwAAAAECAAMEEQUhEjFBBhMiUXGBFGGRobHB8AcyYnLRFSNCUoKSsvEWJUNjc3Sio7PS4f/EABkBAQEBAQEBAAAAAAAAAAAAAAABAgMEBf/EACYRAQEAAgICAgEDBQAAAAAAAAABAhEhMRJBA1EEBSJhE3GBkcH/2gAMAwEAAhEDEQA/APGxF4T5bQUTrRbI9LHCoJQbhRni4czn8nyTDW/b3fh/h38ny8bqyf7ckBCdJY0V7jdVz4wcqM5BM5tv19JcPk8rZ9Of5H4t+HHG278pv+xsIkWdXlOEICBhD03lhEkVuN5pW6ZIErjnlpSKgRyrLV3R4WjaKZIEMeXCDgycD5D3MWtUwW/hXh9zJeDhf0P3lKq3EcfNifptOeXbth1tvaRQLIqjmRn3O86C20B2IYnBKjPoOkpaI4VUPyE6e1vS2ByG/wBJ58rdu+OMvZKWjgL4iSd+fn+cjv2ShSLIADyH801lqhvoB7TF7U0WNNO7G5b58sTMvp0uMk3HIUNWqPxtlwOLCniPiEvdldZcVuBy2C3D4jyJ3B+XWFtpLsuDwg5BxgDYeUtW+jstem6MpQVELjY7idbZpynbvaSU6g3AySTuOfT2mZe6JRZiSFBwOWOst8fANuXrKN1djJyfec5XWye3Na3oAp06hpnIKnbynGUHwEPUEA+mcf0ne3F4fEpOQcj2M4G48LuOgdh7ZzOuPXLhdbOvFw23XeNVgJaNMOoPUKv3GPylOsmDO2PTjdb0KrA7CQGngS7bW/Fkxa1HA2mkmUnDNMUxzjBjTI7HCMaPHKNaRIbGx0QwsJmLmJCFEfwGWUtRgEmWEtth4lk2zclDE7C1PgT+VfwnH55zqKlQpSDDoKR+4zPL+TN2T+X3f0bP+n55X1InqKArgcjxn3Oczjn5ztKpBQkcipI9CJxb8zH4veTf63JMsNdc/wDDIsSLPW+CcIsQRZUT2o3mxY08sJlWg3nRaUmW9jLHk+W8qWog8W45QsaXEwlzW0AIMNJXxE/KHPfDMu14WfPMZ+syVPi95rao3icdSce5OJAbLwnYDBABA38t/OcreXtwn7Y2tLfKL6D+k3bd8YnN6O2FAPMEj3BxOgpNy9pwy7dcbprUK/5SvqmqqoAPPfA9pA1TAmLqNPLEsWIxyGV29ZMcZbyuWV1qInu6z8RpqWGQGIxw5zj+kdbapUovwt4W58LY3XMrC6pICO5pZIxtTXOPzkVW5pvj+6RRkHwIqnOMdJ34cdfw7G11gVB7DIPQ/KRXNTP3mFYAJ4l4hnoSOR8ppVHGMzlcZLw35WzlUuG5zk7zepVHz4vpOkva4wZzdyhy7jzH4Tpii9pRDEKf8i/XGYuo0cYPzIlLTKvDUB+Y+mZq3+/B/MZ1xcPk4ylVrM78PnL9xa4wMc8yDT6Y4yT05es1nIOJpwyvLj7lMOR8zIiJc1Bf7xvUyq0j143iAcoxo8RjyLCRhj4ww1AIoMSEKvrcKcDHrF418pQEl44c7j9GrL9bU3ZOAhQMAbA5295RpLnaPen5TNxl1v074fNlhuY3Uva9S1d1TgwpGMbjpjHOZhaIRjaJExk6jXyfP8nyyTK710SEITTkeIsQRZUWrTmJ0ukcz6fnOZtOYnR6U+CfSV5fm7M1t919/wAZJo+7H0H4yjq75ce/4yzpDYYk8gCYc9cRl6uxDv8Az5H12mrRQPSdh1HhxzJIzMTUqgd2I88/Q4jtOveAcDHC5DDPTf7TjlNx7sOI0rcFGAO2QD7jaa9CrMfUbqmqqwILEgjhPSLbXgO+Zz1ubbbpfP2+sabcvKdK5HmJbt7pV5mZ0I/7GLHmBEXQsHJIPoJdOs015IDy5nrIqmvr0RR7yzZbFd7MpuDmVK9bES81jPymTWvM8zNSMHXNbPWQlwKZBHMHeU61fPKNq1y2ByHynSQOteZ9sevOa9Z88B/iH3mLRPP5/lNQnwL8nE1O3L5Z00rNPE0ulMESpYN4j6S+55Tby1zF+njf1lAzTvh43mcRI9OF4NEY8kEY4kdJ2QRrRwjWhqdmiBhiEKIQhAsUWC7nnHrVU8xvK2YmYZ8dpKrAnaRwhCyaJCAiwpwixBCVFm25zWtK3Dn0mPbmW0fAPpK4Z47pa9biaSpXKK2Ou3tKCt4o6tU/XpMZX01jhyR25+g+5xKjCTO34D6ZkJ6yR2hssUScbHH9ZXk1BsH6RelW0rv8474qpyzHqm2Y5UBnPhVZqrnrGFn8zLvcQajw7n2liWyM7DHnn3kdQy3WbEr8BJmozEBEI5+ZjZpUinBH62mqx8BH8Sn7YmPNClU4kx12+0ntjObjU05/F7TUduU5q3rFW2m3Tr5AzNvNliyr7995nmX745dpQh1wnBBGVI8RryOk7NEYY8RrQ0ZFiRYUkIRYCQhCARYkUQAQhFhdFEIQg0loyXi5yGnJBvDnlOTEbGT6xhb8h7xCdz6/YQH5Z9+czW5Dz19B+MjP5mSD/wCokZH694imR9M7xsVOY9RCtm2XIklKllsCSWCDAyPKWOIB8Af85z0zcvpIbdQMYzM25QjPPE3VG2ZUvKOVJ5HfH/7NWOeOXPLnxT4m394+qoQfreG+do27Qjmf1+UsdLFFjuYgEIo6ytEli2fhPyIAMryQbfQfXMJpaqKVORy/CW6F6AADKVB88yeW0c9LIyNvPEbYywlOuKgZiZXzGqDvsfoYvSaSY6AMRt4mYvSRdGiDQimVdIoQMIUQhiEBIQhICAhCAoixojoahYRscJFS0hJQMby1b6YwAaoQgOMKd3IPy/w+8bcpTTkGP82TmNs+PLNEdj7n7RWP455Yh5e8Loo/M/hGsPsB9Y4dIjHnC6RwixwWBuWtbwDHPA/CPLYIbn/WULBvD7mXhuPT8JzvZ4xp0KgIyPltK97UyMRtE4Bx5D8ZE+SZfJjwm1RUAJOd9vvKV6+WPlNE0zv5kyndUQvrErV0zcQHL3Em4IxlxNbNEQR7Dn/pH2iAQJ29yZV0EbH66GSpW4W6kY5bc5BEg02LSqjc8cuvnK1xcUySOEdd1zzlJWx9tjyjmbPRR6DEkiahSBvjcflEYwKFeYIzyz1HyjWMpooimMzBjKlIYLG5gDCJnPhEgj3MZCQQhCFEIQgEIRRI0BLtnhMOee/D8vnKqLnnyktZs8Pv9MwsntJWuW4mIJz55JMrs5PMk+pMZLmm2L3NRKVPBdmVVycDJOPzgVRHfr3mhrWjV7Go1KuhRxn5gjPMHqJJo+jNdioUqUU7um9d+8LrikmCxGAc4yNoVmr1jDNXStGq3TOtMLwIveValRhTpUqYOOJ2P7o+/wAuc1bbsmldhTo6hptSsSFFPvalPjYjYU2ZOFjnbpJo3HKAScpJdR0+rbVGo1qbU6inDK+zL1389uo2lixtnrlKdNWd2YIiouWZz0A6xasmz9NXAI+cvKhyZeTQVpNwVryxpVAcMhqO5pt5OyjhU/WLqGmVrU0zUVTTdeKjUpOKlKquM+B+v2mKXH6RWybHMjZRky5dadWt0pvUQinVprVpMN1ZSM4+RHlKWnWrXNZaYdFLEIhckKWJwBtyk2zML3VZ3wTiU7pCZ0dr2bepdG0WrQ70MV3NQIXBxgHhkl/2Ven3qvd6aalNHeoiXLtUAQZPhKCOXSYxxrLiQKMmWbrYkdeuJAk3Ojx5Djf7RMb+n5RQesCNvX8MwWIokcYyaYoBhmJCEWqdbK8B5dPlIaiY9OnpIwZKWzkH2hO0UCYERJUogIQhBmEIQCEIQCEIQFhARVEjRywY5gevrGw0UCbPZWoVvLcg4PfW67fOqgmPNnsrSLXltgqAK1B3LMqKqLVViSSegBgek397b609awuClO8p1K6WdRsAOVdhwN9Jx+gafUtqmpUaqFKiadqKsrcwQqH326zO7WU2pX1w6shDXFerSenUVgyNULgqVO3MfOdfp/ai3vrS6+L4U1BNPu7ejVJC/F0mT9x/NgQMee+OohFHXLf4bRNOCbfE1q1zXK5HEyqeEN58Ixj0nCU2ORudzg7nlmd3oep2t7YHTLqqlu9Oq1awr1OLulZs5Sof8IOWGeWD5jfN/wChlem/FWq2VGiCD3zXtB04fNQp4mPy4RmStY6m9tr9oB+J03R718fEPRejWbA4qgRcgn3Df7jK/wCzql3drq14uBVoWjLQPVHdXJYeWyqPrMnthrdO5Nvb24YWtrSFtblxh6g2LOw6Fiq7dBz3OA/sL2gpWNaolwhqWtxTNtdKoyeAk4YDrjLbdQT1GC3yasm2WjKdgSMbD5ATtezzd9pOp0am60VS8tyf+zqEnPD5ZK/czEvOx1QPx2de1u7YnwOt3RpsF/7xHIKnz5/lNA11trCrb0GFw1WtSW+rUctb09spSRzs5J3J5bmY8bK3MplJ9t19Xpp3FldjitKllZuGA8dtVYMONT5bDMwquh1NPvrdGIZGr270ag/dq0zUUZX6jaL2wpcIs3D03C2VrQfgqI/BWQNkNg7c5Z7LdpKOEtL88VuKiVLeoT47SqrBgc/5M/TPlym98VqTjcT6MwGtc+d3UX/3GlXtlYU3r3tRLy2Lp3rtSHed6cNjHl1Ef2bpNcau1Sm9Pu6d3Xru7OqoyB2wFPUnIx7zG7RaDds93eVqfcUzUqVFDVqNQsz1cKgCMST4ufIYlmPHKWyZajO0LSqTitc3TFbeivGwUhXuKpPhp0yf8R5nqF365Elvqdke9WpZUUUU6rUCla5Lmtjwh34wWB36eU0tBrULvT6unVKqUKwuReWb1mCUqjsnA1Nm5KSOLBPmPKXdE0ipYWuotd07dB8K5tDVe0qMbvkO7wzHOPKbjGXd2otYWdCwsrp7erVarVuaNQJdPTAFJsZUAHcjO0d2ZttOvLqla/C114u94qjXrKwKoz7KBjoBzm5bC9Gl6eti/DUWve1HVK9BG7t6hZCwdtwZh9hKLJrKd4yHga8NVgyqme7dCcnpxNgSszmJ9I0qxvWqpTtbgVKaPUVBes5rhVHhHhBU5nJ67UoFgtO3qW7qXWor13qjIO2OIAiX9LsLrv6rW793c0eB+EVUR2PFwnhJPC2OePIy728vBXW1estJb7gqi7FMocgMOAvwkgMV4jjMJZNuJhFiQEimEIQrRsd0jYhRCEJWRCEIBCEIBCEICxy842PTnJW52QGJCEBRHfrfEaDFhqHfT2AnTdndESrRuLy4LfDURTQrTIWpXuHICIpI8I3BLdBjHy5kTvOx2oW9WzutOr1UotUalXt3qtwU+/QABXPQEKu8i+kekJYahVW1FB7R3JWhVp3dauoqkHhFRXG6k7ZXB5RuqaDRttOao9Dgu0vnsHZazleFELlgnIZwRjyOY7Q9HOn3KXF29KnSp1FqArXpO1bgPEBTCklicDylq71RNUtLmmHRLj41r6mjuqd6jUyhVCdiRIup6UOzdrZ/B3NxcW71Wo1rVRwXNWnxrVJ2IGwwQN/WaAp6cdPa9+BfK3i2fB/aV1wlWo95xcXDnOTjGJku4s7Ctbuy9/XuLdyiurNSo0QTluEkAljsM8t5duKL0NEVKiVFarqCXNLKEhqK24TiJ5LluQO5l2nju/5cvqVWjUrOaCNSpFgVWo3eMq8Izlju2/Fv5T1nRdKorpFaxreCo9p/ald2VsUWdiUDeWAi7fIzh/2daPSubvjuAnw1CnUubnvB/d8CjADdMEnP+kz0DsVUpLeXHHqVjdfEhkNNHqGoTliAvFzAUkY8gPKIWScfTxdGw4GNsjIHhOCckZ6eU7btVotpbWFldUqdcPdIHw9yzJRPAG2GPFz6zB7U6MbK9qUTyWphPmmcr/6eGdX26H/VGif+Cf8A41kb1ux57bMoYF040GWZeIpxKFJxxcxO87Z6Bp+mPahLarUFSka78d06NjlwrhfMzz9R+9/K/wDwmek/thP95Y/+SX/jWJeDLHeUin297N2lra2lzZrValXBbvKlcvjKcQXh5bjiOf4SOs5fsrYC6vLegycavUVGCsKZCkEk8QGRhQx9p2/ZZ/7T0e7044Nahi6tM/5Q3Fgf6g49CJz3ZR/g7a71AHDhPg7LPDn4msuSw/lTB9zDPUsvbU0rRNKu9UNilGv3Wa6pV+JJqOyDc8JXGMhh7ZlR6GiJcvb1aN+qpVqUS7XVMplGKZIxnGR0kf7J99WtyOXDWA9ODEuato+mVLy5D31ylQ1rpirWYRQ/EzEcZ2/e2zNMWaunnzkZ2A9MDAJ6SJj6ewAkjfkp98SKGqSJHRsMUQhEhDhGxYkFEIQlZEIQgEIQgEBCEBRHLGiKsjU7BiGBiQbOWKTGrFMLLweDF4owRyyNy+kgPp7ACKDiMEUGR0lmgP1ylikjOQqjJJCgDmzE4GfrK4j12krUj0qnp9TT9EuCUxXuKtNayq1MtSs0yfFg7ZPFt/FOG0rUKlCtTqqx4lcOMk/vA5lAsOWB7KoMQmKY46l29a/aRYC+p2t/b8DlqaCuqunGu3EDgn5sPcRnajSatzpel06RpvUpUwtZBXpqylqYHU/KeTFvkv8AtEfxfIf7RKzMb19N657N1qFINVCq71O5ootSm7ueFiSeEnhHITrf2t0i5snQqyJarSqFXVgjhhsd55kxzvt05ARxb09gBIurcpb6dB2I1v4C+oVicJxd1W5Yai5CnPp4T7TS/aLd0FrCztTmhSarUJB2avWbjbHngEAepnFRD+vSWXjRcf3bd1+ySnjUUclVREqlmZlUDKgDn7y32k7D3lze1alNKXdPUZxU+JtwgVmzkjiz7YnnOceXuAYneHyX/Yn9JY5Zb3ws6lbilUqUwwYK7qGGPEFYrn3ABlImLmNMRLREjjGysURIsSCiEIsBIQhKyIQhAIQhAIsSELCx3SEJFhkWEIAsUwhC+jgYsIQ1OigxYQmW4cIoMISOkNByY+EIq49CJCEKRuUVT+vnCEemfZMxMwhKlNiZhCacqSNMIRGMhEEIQlESEIBFMIQCJCEqUQhCEf/Z" alt="">
+            </div> -->
+      <!-- </div> -->
+    </div>
+
+    <!-- movies section end -->
+
+    <hr>
+    <footer>
+      <div class="footer-container">
+        <div class="all-item-center">
+          <div class="site-footer">
+            <div class="footer-top">
+              <p>
+                Questions? Call
+                <a class="footer-top-a" href="tel:000-800-919-1694"
+                  >000-800-919-1694</a
+                >
+              </p>
+
+              <ul>
+                <li class="footer-link-item">
+                  <a href="#"> <span>FAQ</span> </a>
+                </li>
+                <li class="footer-link-item">
+                  <a href="#"> <span>Help Center</span> </a>
+                </li>
+                <li class="footer-link-item">
+                  <a href="#"><span>Account</span></a>
+                </li>
+                <li class="footer-link-item">
+                  <a href="#"><span>Media Center</span></a>
+                </li>
+                <li class="footer-link-item">
+                  <a href="#"><span>Invester Relations</span></a>
+                </li>
+                <li class="footer-link-item">
+                  <a href="#"><span>Jobs</span></a>
+                </li>
+                <li class="footer-link-item">
+                  <a href="#"><span>Ways to Watch</span></a>
+                </li>
+                <li class="footer-link-item">
+                  <a href="#"><span>Term of Use</span></a>
+                </li>
+                <li class="footer-link-item">
+                  <a href="#"><span>Privacy</span></a>
+                </li>
+                <li class="footer-link-item">
+                  <a href="#"><span>Cookie Preferences</span></a>
+                </li>
+                <li class="footer-link-item">
+                  <a href="#"><span>Corporate Information</span></a>
+                </li>
+                <li class="footer-link-item">
+                  <a href="#"><span>Contact Us</span></a>
+                </li>
+                <li class="footer-link-item">
+                  <a href="#"><span>Speed Test</span></a>
+                </li>
+                <li class="footer-link-item">
+                  <a href="#"><span>Legal Notices</span></a>
+                </li>
+                <li class="footer-link-item">
+                  <a href="#"><span>Only on Netflix</span></a>
+                </li>
+              </ul>
+              <p class="footer-country">Copyright &copy; Netflix India </p>
+              <p class="footer-country-2">&copy; Netflix India</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

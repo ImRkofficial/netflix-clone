@@ -329,6 +329,13 @@ padding-left: 10px;
     }
 
 }
+
+@media only screen and (max-width:480px) {
+    .banner_title{
+        font-size: 25px;
+    }
+    
+}
 @media only screen and (max-width:300px) {
     .footer-link-item{
         padding-top: 11px;

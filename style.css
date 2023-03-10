@@ -378,3 +378,9 @@ padding-left: 10px;
     }
     
 }
+@media only screen and (max-width:950px) {
+    .banner_title{
+        font-size: 55px;
+    }
+    
+}

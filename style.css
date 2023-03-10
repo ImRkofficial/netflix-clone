@@ -336,7 +336,7 @@ padding-left: 10px;
     }
     
 }
-@media only screen and (max-width:300px) {
+@media only screen and (max-width:350px) {
     .footer-link-item{
         padding-top: 11px;
         width: 91%;
@@ -350,7 +350,7 @@ padding-left: 10px;
         font-weight: 500;
     }
     .banner_overview{
-        max-width: 70%;
+        max-width: 85%;
     }
     .movie-item{
         width: 120px;

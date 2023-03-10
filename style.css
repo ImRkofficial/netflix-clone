@@ -336,6 +336,16 @@ padding-left: 10px;
     }
     
 }
+@media only screen and (max-width:400px) {
+    .banner_title{
+        font-size: 25px;
+    }
+    .banner_info{
+        font-size: 19px;
+        margin-bottom: 2px;
+    }
+    
+}
 @media only screen and (max-width:350px) {
     .footer-link-item{
         padding-top: 11px;

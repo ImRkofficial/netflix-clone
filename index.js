@@ -72,7 +72,7 @@ function fetchAndBuildSections(){
 
 
 function fetchAndBuildMovieSections(fetchUrl , categoryName){
-    console.log(fetchUrl , categoryName);
+//     console.log(fetchUrl , categoryName);
     return fetch(fetchUrl)
     .then(res => res.json())
     .then(res => {
@@ -87,7 +87,7 @@ function fetchAndBuildMovieSections(fetchUrl , categoryName){
 }
 
 function buildMoviesSection(list ,categoryName ){
-    console.log(list ,categoryName);
+//     console.log(list ,categoryName);
 
     const moviesCont = document.getElementById('movies-cont');
 
@@ -106,7 +106,7 @@ function buildMoviesSection(list ,categoryName ){
     </div>
     `
 
-    console.log(moviesSectionHTML)
+//     console.log(moviesSectionHTML)
 
     const div = document.createElement('div');
     div.className = "movies-section"
